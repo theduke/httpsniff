@@ -102,13 +102,13 @@ class Application(object):
         self.runSniffer()
     
     def runSniffer(self):
-        self.sniffer.run(True, 50)
+        self.sniffer.run(True, 5)
     
     def onTick(self):
         if self.snifferActive:
-            self.sniffer.run(True, 50)
+            self.sniffer.run(True, 10)
         
-        self.tk.after(500, self.onTick)
+        self.tk.after(1000, self.onTick)
         
     def onNewRequest(self, data):
         host, path, ip = data
